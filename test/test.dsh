@@ -1,0 +1,21 @@
+echo Привет, мир!; echo Тест запущен!
+
+echo Тест работы с файлами:
+
+echo O > tmp.txt && cat tmp.txt > f_1.txt && echo K >> f_1.txt && cat f_1.txt && echo !;
+
+rm tmp.txt; rm f_1.txt
+
+echo Тест условных команд:
+
+(ret 0) && echo OK!; ret 0 || echo ERROR!;
+ret 15 || echo OK!; ret 15 && echo ERROR!;
+
+echo Тест конвеера:
+
+fortune -s | cowsay;
+
+echo 11 > tmp.txt; echo 22 >> tmp.txt; echo 13 >> tmp.txt; 
+cat tmp.txt | grep 1 | wc -l | ret && ERROR!;
+
+rm -rf tmp.txt;
